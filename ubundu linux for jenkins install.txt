@@ -1,0 +1,181 @@
+sudo su  adminstor user 
+ls
+pwd
+dir
+cd ..
+mkdir mahender 
+cd mahender
+
+
+for any floder we have set of permsion we need to give 
+
+                   read                    write                     exectiion 
+
+owner               4                       2                            1
+
+group               4                       2                            1
+
+other               4                       2                            1
+
+
+
+chmod filename     777   full permission 
+
+chmod filename     444   Read permission 
+
+chomd filename     666   read and write permission 
+
+chomd filename     555   read and exectiion
+
+sudo apt update
+
+Java --version
+
+sudo apt install default-jdk
+
+sudo apt install openjdk-11-jdk
+
+sudo apt install openjdk-8-jdk
+
+sudo update-alternatives --config java
+
+sudo apt install default-jre
+
+sudo apt install openjdk-11-jre
+
+git --version
+
+sudo apt update
+
+sudo apt install git
+
+sudo apt update
+
+sudo apt install libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc
+
+mkdir tmp
+cd /tmp
+
+curl -o git.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.26.2.tar.gz
+
+tar -zxf git.tar.gz
+
+cd git-*
+
+make prefix=/usr/local all
+
+sudo make prefix=/usr/local install
+
+exec bash
+
+git --version
+
+
+systemctl status jenkins 
+
+vi /etc/ssh/sshd_config
+
+port 22 and public autocation yes and   
+
+vi /etc/ssh/sshd_config
+:wq!
+
+apt-get install maven
+
+mvn --verison
+
+apt-get install git 
+
+git --version
+
+apt-get install nginx
+
+apt-get update 
+
+apt-get install jenkins
+
+sudo apt install default-jdk-headless.
+
+after install jenkins you need to start 
+
+
+wget -q -O- https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add
+
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/>/etc/apt/sources.list.d/jenkins.list'
+
+sudo add-apt-repository universe
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+systemctl status jenkins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+if jenkins is not update you need to have command is 
+
+yum update
+
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+
+rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
+
+yum install jenkins
+
+  
+service jenkins start
+
+chkconfig jenkins on
+
+
+
+
+sudo su
+
+sudo yum update –y
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+
+https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+sudo rpm — import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+sudo yum upgrade
+
+install java:
+
+sudo amazon-linux-extras
+
+install java-openjdk11 -y
+
+
+
+   
+
+
+
+
+
+
+
+

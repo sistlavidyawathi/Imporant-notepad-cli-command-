@@ -1,0 +1,194 @@
+https://docs.microsoft.com/
+
+20.231.42.166
+az login
+
+az config param-persist off or on
+
+az vm list --output table
+az vm list --output tsv
+az vm list --output JSONC
+az vm list --output YAML
+az account list --output table --all --refresh
+
+az ad sp create-for-rbac -n "Daarvi-india-group"
+
+Rersourcegroup 
+az group create -n  Daarvi-RG1 -l eastus
+
+az group create --location eastus --resource-group newageproducation
+
+create virutal machine in cli 
+
+az vm create --resource-group Dieboldresourcegroup --name Daarvivm1 --image win2022Datacenter --public-ip-sku Standard --admin-username sistlm 
+
+az vm create --resource-group ODL-az-204-638158 --name Azuredev-opsvm1 --image win2019datacenter --admin-username sisltm --admin-password Mahi$$$$211980 --size Standard_D4s_v3 --use-unmanaged-disk --storage-sku Standard_LRS
+
+VmName="DaarviVm" AdminPassword="Mahi$$$$211980" az vm create --resource-group $Daarvi-RG --name $Daarvivm1 --image win2019datacenter --admin-username sistlm --admin-password $Mahi$$$$211980 --size Standard_D4s_v3 --use-unmanaged-disk ----storage-sku Standard_LRS
+
+az vm open-port --port 8080 --resource-group DieboldRG  --name DieboldRGvm1
+
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+Install-WindowsFeature Web-Asp-Net45 
+
+Install-WindowsFeature Web-Asp-Net45,Web-Mgmt-Service,Web-Net-Ext45
+
+Install-WindowsFeature -Name Web-Mgmt-Service  
+
+
+az vm list --resource-group MyResourceGroup
+
+
+
+Use this link https://www.microsoft.com/en-us/download/details.aspx?id=39277 to download Web Deploy 3.5 msi file, installation is pretty simple just click next and go.
+
+Storage
+az storage account create --name daarvistorage --resource-group Daarvi-RG1 --location eastus --sku Standard_GRS
+az storage account create --name daarvistorage --resource-group ODL-az-303-555236 --location eastus2 --sku Standard_GRS
+az storage account create --name daarvi-storage --resource-group ODL-az-303-544150 --location EastUS --sku Standard_GRS --encryption-services blob 
+
+az storage account create --name daarvi2storage --resource-group ODL-az-204-580362 --location westus2 --sku Standard_GRS ******
+
+key-valut
+az provider register -n microsoft.keyvault
+az keyvault create --name dieboldvalut --resource-group DieboldRG -l eastus
+
+Sql-server 
+az sql server create -l eastus -g DieboldRG -n dieboldsqlserver -u sistlm -p Mahi$$$$211980
+az sql server create --location eastus --resource-group DieboldRG--name project222 --admin-user sistlm --admin-password Mahi$$$$211980
+
+sql-db
+
+az sql db copy --resource-group ODL-az-303-525396 --server venkat-server --name venkat-Db --dest-name newDb --family Gen4 --capacity 1
+
+ az sql db create --resource-group DieboldRG --server dieboldsqlserver  --name dieboldsqldb --zone-redundant false
+ 
+ az sql db create --resource-group mygroup --server myserver --name mydb --service-objective S0
+
+
+create website 
+
+gitrepo=http://github.com/azure-sample/php.docs-hello-world
+
+az webapp depolment source config --name $webappname --resource-group myresourcegroup --repo-url $gitrepo --branch master --manual-integration 
+
+echo http://$webappname.azuerwebsites.net
+
+
+webappname=mywebapp$RANDOM
+
+az group create --location eastus --name DieboldRG
+
+az appservice plan create --name Daarviweb --resource-group ODL-az-204-585799 --sku s1
+
+az webapp create --name Daarviweb --resource-group ODL-az-204-585799 --plan Daarviweb 
+
+Version like java php .net python 
+
+update.net version 
+az webapp config set --linux-fx-version "DOTNETCORE|5.0"  --resource-group <groupname > --name <appname>
+
+update PHP version 
+az webapp config set --php-version 8.1 --resource-group <groupname > --name <appname>
+
+
+updated python version 
+az webapp config set --python-version 3.10.1 --resource-group <groupname > --name <appname>
+
+java version 
+az webapp config set --resource-group <groupname> --name <appname> --java-verison 1.8 --java-container Tomcat --java-container-version 17.0
+
+updating app runtimes (Node.js)
+az webapp config appsettings set `
+        --resource-group <groupname>
+		--name <appname>
+		--settings website_node_default_version=17.0.1
+		
+		
+Automate slot managment -Azure CLI
+az webapp deploymnet slot create --name <appname> --resource-group <groupname> slot staging 
+
+az webapp deployment slot swap --resource-group <groupname> --name <appname> --slot staging --traget-slot production
+
+
+
+service principal
+az ad sp create-for-rbac --name azure-dev-ops111
+
+{
+  "appId": "e3ff8ea6-bdfe-4495-8bdc-c659e726187b",
+  "displayName": "azure-dev-ops111",
+  "password": "b918Q~-NK2fYN16W4MatQq4ehub~xUpXaVudqatu",
+  "tenant": "ed6abd4b-ea2b-46d7-b0ed-8a2f3c961632"
+}
+
+az account show --subscription MySubscriptionName
+
+
+az account show --output table
+
+az login --service-principal --username "$AZURE_CLIENT_ID" --tenant "$AZURE_TENANT_ID" --password "$AZURE_CLIENT_SECRET"
+
+
+az login --service-principal --username "${applicationId}" --password "${password}" --tenant "${tenantID}"
+
+
+servicebus
+az servicebus namespace create --resource-group DieboldRG --name Dieboldservicebus --location eastus
+
+az servicebus queue create --resource-group DieboldRG --namespace-name Dieboldservicebus --name DieboldservicebusQueue
+
+az servicebus namespace authorization-rule keys list --resource-group DieboldRG --namespace-name Dieboldservicebus --name DieboldservicebusKey --query primaryConnectionString --output tsv    
+
+
+
+
+
+
+Allow new private endpoints
+az appservice ase update --name myasename --allow-new-private-endpoint-connections true
+
+
+
+
+
+
+
+Certificate Creation Script:
+
+$certificate = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "*.ashavijaya.appserviceenvironment.net","*.scm.ashavijaya.appserviceenvironment.net"
+
+$certThumbprint = "cert:\localMachine\my\" + $certificate.Thumbprint
+$password = ConvertTo-SecureString -String "work4atcsl" -Force -AsPlainText
+
+$fileName = "ashavijaya.pfx"
+
+Export-PfxCertificate -cert $certThumbprint -FilePath $fileName -Password $password   
+
+
+
+
+
+
+
+
+
+
+az vm create --resource-group $ODL-az-303-555236 --name $DaarviVm1 --image win2022datacenter --admin-username sisltm --admin-password Mahi$$$$211980 --size Standard_D4s_v3 --use-unmanaged-disk --storage-sku Standard_GRS
+
+
+
+
+
+
+
+az vm create \
+    --resource-group $ResourceGroupName \
+    --name $VmName \
+    --image win2016datacenter \
+    --admin-username azureuser \
+    --admin-password $AdminPassword \
+    --size Basic_A1 \
+    --use-unmanaged-disk \
+    --storage-sku Standard_LRS

@@ -1,0 +1,16 @@
+ls : COMMAND TO LIST FILE AND DIECTORIES 
+cd : COMMAND TO CHANGE THE CURRENT OR ACTIVE DIECTORIES
+Sudo and su  : COMMAND TO CHANGE THE CUREENT USER TO A SUPER /ROOT USER 
+mv : COMMAND IS USED TO MOVE THE FILE OR RENAME A FILE
+rm : COMMAND TO REMOVE FILES IN DIRETORY OR THE DIRECTORY 
+rm -r  : COMMAND TO REMOVE  ALL THE CONTENTS OF DIRECTOYR AND THE DIECTORIES AS WELL \
+Mkdir  : COMMAND TO CREATE A DIRECTORY IN THE CURRENT DIRECTOYR 
+chmod : COMMAND TO CHANGE A FILE MODE TO R-READ W- WRITE OR X-EXECUTE
+chown : COMMAND TO CHANGE THE OWERNSHIP OF A FILE /FLODER 
+cat  : Command to view the contentes of a file 
+echo : command to disp0lay a text or a string to the standard output or a filen 
+clear : clear the screen 
+apt-get : A package manager to install remove and upgradde softwar package 
+histoy : command to show the histoy commands 
+
+ 

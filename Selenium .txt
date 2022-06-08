@@ -1,0 +1,84 @@
+What is automation tool ?
+Automation testing is an application software testing process using software tools to control the exection of tests
+The Actual test result are compared with the expected test results 
+
+What test case should automat 
+High risk and bussiness critical 
+repetitive exection 
+monotonous or exhausting to perform manually 
+laborious 
+
+It is also important to note the automation is not appropriate use in the test cases 
+That are newly designed and have never been manually executed at least once 
+
+whose requirements change frequently 
+
+that are exectted in ad-hoc situations 
+
+
+Test planning desing and development 
+
+seclcation of automation tool as per requirements
+
+framework designs and their charctewristics 
+
+autatomation componets that are in the out of scops 
+
+perparation of an automation testbed
+
+schedule and timeline of scripting and exection 
+
+testing tools list 
+
+ranorex    testim    lambdatest   selenium  
+
+
+selenium is an umberslla project that includes a set of tools and libraries that enable and support web browser automation 
+
+selenium is being by many of th worlds most important corpoation for broswer base testing typicallt replacing years action of plans involving other proprietary tools 
+
+is an open source3 qand porable network 
+
+is highly flexiable 
+
+suppots cross browsing 
+
+Helps in createing robust automation suites 
+
+ it also understand the all the requirment like 
+ 
+ Browsers             operating systems               programming languages 
+ 
+ Mozilla firefox       android                          c#
+ 
+ opera                  apple ios                      java
+ 
+ microsoft edge         microsoft windows             python 
+ 
+ google chrome          mac os                        javascript 
+  
+ safari                 solaris                       php 
+ 
+ internet explore      linux                         ruby 
+                                                     perl
+													 
+													 
+selenium 
+
+test case will use testng and jenkins 
+
+
+Selenium webdriver  architectural of seleniuy web driver which is categorized into four main componets 
+
+selenium language binding also known as selenium client libraries
+
+JSON WIRE PROTOCAL 
+
+BROWSER DRIVER 
+
+REAL BROWSER 
+
+JSON = JAVA SCRIPT OBJECT NOTATION 
+
+
+

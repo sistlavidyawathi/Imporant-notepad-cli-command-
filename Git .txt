@@ -1,0 +1,176 @@
+HEAD MASTER  ORIGIN MASTER 
+lOCAL          repo 
+
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+git config --list
+nano ~/.gitconfig
+create a new repository : $git init
+clone the repository : $ git clone (url)
+check status of your life and make change , add file and delete files : $ git status
+add change to staging area :  $git add file-name 
+add directory : $git add directory-name 
+add all file  : $ git add -A
+add all directory :$git add .
+remove file : $ git rm <filename >  or git rm file1.txt
+commit change : $ git commit -m "your commit message here "
+pull the change from the remote repository to local computer : $git pull <branch_name > <remote_URL>
+push the branch to your remote repository :$git push origin <branchname >
+push all the file : $git push --all
+connect a local repository to a remote repository : git remote add origin <server>
+
+
+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
+
+mkdir newproject1
+cd newproject1
+echo " #create new file for my new project and hello world" >> README.md
+git init
+git add README.md
+git commit -m "frist read me the file for readme file only"
+git branch -m main
+git remote add origin https://github.com/sistlavidyawathi/Newproject1.git
+git push -u origin main
+git status
+
+curl -u sistlavidyawathi1955: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 https://api.github.com/user
+
+
+
+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
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git config --global git@github.com:sistlm/maven-project1.git
+git config --global user.name "sistlm"
+git config --global user.email "sistladurgamahenderrao@gmail.com"
+git commit -m "added "
+git add -A 
+git commit -m "added the files " -a
+git commit -m "mavenproject1"
+git remote add origin  "https://github.com/sistlm/maven-project1.git"
+git push -u origin master
+git add test.txt .gitignore
+git add -A
+git commit -m "added the files " -a
+git log
+git branch JIRAFIX21LOGINFIX
+git branch
+git checkout JIRAFIX21LOGINFIX
+git stash save                             for example if you working in the different directoy you forget and commit all the change in sensouries you will use it commanbd
+git stash list 
+git stash apply stash@{0}
+git add "new text documnet.txt" 
+git push  -u origin master 
+git add "New Text Document.txt"
+git push -u orgigin master 
+git status
+git checkout JIRAFIX21-LOGINFIX
+git  status
+git cherry-pick
+git status
+git add "file name"
+git commit -m "resolved conflicts"
+git push -u origin master 
+git branch 
+
+
+
+
+
+
+
+git log -n 1 
+git log -n 2
+git log -n 3
+git log --author="sistlavidywathi"
+git log --grep="committed"
+git show head
+git clean -n 
+
+
+
+
+
+
+
+Available subcommands are:
+   init      Initialize a new git repo with support for the branching model.
+   feature   Manage your feature branches.
+   bugfix    Manage your bugfix branches.
+   release   Manage your release branches.
+   hotfix    Manage your hotfix branches.
+   support   Manage your support branches.
+   version   Shows version information.
+   config    Manage your git-flow configuration.
+   log       Show log deviating from base branch.
+
+
+
+
+
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Nomenclature will help us track easily
+understand or backtrack critical issues and its resoultion inside 
+we can find the out impacted files 
+it may help us in fixing a similar issues
+

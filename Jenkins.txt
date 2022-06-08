@@ -1,0 +1,211 @@
+Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+
+
+
+
+C:\Users\91863\.jenkins\secrets\initialAdminPassword
+
+9a072fa4e60347ec919d6a017d56e6b3
+
+
+
+Jenkins open source is done by the hat son and for java project 
+
+1500 +plugins  and jenkins have better commuity support 
+
+after install jenkins it will ask for localhost:8080
+
+for open the source link for password is sudo su   
+
+ cat /var/lib/jenkins/secrets/initialAdminpassword
+ 
+ 
+ 
+ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+ 
+ respone   ok 
+
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt update 
+
+
+sudo apt install jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+sudo ufw allow 8080
+
+sudo ufw allow OpenSSH
+
+sudo ufw enable
+
+sudo ufw status
+
+http://20.106.208.78:8080/
+
+sudo apt install maven
+
+
+
+
+integration webbook connection between gitwebhook and jenkins local 
+
+
+
+
+sudo su 
+
+ngrok http 8080
+
+Ngrok                 and Expose.sh 80        https://expose.sh/
+
+
+download ngrok 
+./ngrok http 8080
+http:ngrok:8080 - copy this url ( which can be publicly accessible )
+1) webhook integration jenkins / github
+   confguresystem in jenkins 
+   got to section github servers advanced
+   specify another webhook 
+   http:ngrok:8080/github-webhook/
+  copy this url and goto github
+  settings 
+  webhook
+  add webh
+
+if it linux comamnd to create radom domain ip ./ ngrok http 8080   for window ngrok http 8080
+		
+		
+	EXAMPLES:
+  ngrok http 80                    # secure public URL for port 80 web server
+  ngrok http --subdomain=baz 8080   # port 8080 available at baz.ngrok.io
+  ngrok http foo.dev:80            # tunnel to host:port instead of localhost
+  ngrok http https://localhost     # expose a local https server
+  ngrok tcp 22                     # tunnel arbitrary TCP traffic to port 22
+  ngrok tls --hostname=foo.com 443  # TLS traffic for foo.com to port 443
+  ngrok start foo bar baz          # start tunnels from the configuration file
+
+COMMANDS:
+  api                            use ngrok agent as an api client
+  completion                     generates shell completion code for bash or zsh
+  config                         update or migrate ngrok's configuration file
+  credits                        prints author and licensing information
+  diagnose                       diagnose connection issues
+  help                           Help about any command
+  http                           start an HTTP tunnel
+  service                        run and control an ngrok service on a target operating system
+  start                          start tunnels by name from the configuration file
+  tcp                            start a TCP tunnel
+  tls                            start a TLS tunnel
+  tunnel                         start a tunnel for use with a tunnel-group backend
+  update                         update ngrok to the latest version
+  version                        print the version string
+
+OPTIONS:
+  -h, --help      help for ngrok
+  -v, --version   version for ngrok	
+  
+  
+  Email -integration
+  
+  confguresystem  use the  Use SMTP Authentication  
+  
+  
+  Extended E-mail Notification  in  SMTP server  need to mention : smtp.gmail.com
+  
+  
+  
+  gmail you need to have less secure disable  for that need to updated the  less secure a gamil  options is on 
+  
+  
+  
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+overview of CI /CD PIPELINE 
+
+A CI/CD pipeline automates your software delivery process 01 Build code   2 run tests  3 safe deplyment 
+
+git stash and visual sutdio to implement code to commit 
+
+docker ansible and others can be used to build and configure the application 
+
+Junit cucumber and other can be used to scan the application for bugs and perform test 
+
+UDeoly and screna can be used to realse the application tools 
+
+to depoly the application cloud service like aws google azure platform will use 

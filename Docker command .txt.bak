@@ -1,0 +1,95 @@
+what is docker 
+Docker is an open source tool which is designed to create depoly or run application easliy on container
+
+docker allows application to share the same kernel on which they are running 
+
+docker is bit similar to virtual mahcine but it is not exactly a virtual machine 
+
+
+
+
+
+
+
+
+docker run --name jenkinsci -p 8080:8080 jenkins/jenkins:lts
+
+
+docker pull jenkins/jenkins:lts
+docker ps 
+
+docker network ls
+
+docker network create -d macvlan -subnet=10.10.1.0/24 --ip-range=10.10.1.3/24 ecommerce 
+
+docker network ls
+
+docker network inspect ecommerce 
+
+docker image 
+
+docker ps 
+
+docker pull nginx:stable
+
+docker image 
+
+docker container run -d --name apps -p 8084:80 nginx:stable
+ 
+docker ps 
+
+curl http://localhost:8084
+
+docker ps 
+
+cd /opt/docker/
+
+ll
+
+vi dockerfile 
+
+FROM UBUNTU 
+ARG DEBAIN_FORNTEN=noninteractive 
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN sed -i "s/80/8001/g" /etc/apache2/ports.conf
+EXPOSE 8001
+CMD ["/usr/sbin/apache2ctl","-D", "FOREGROUND", "-k", "start"]
+cat Dockerfile
+
+docker build -t apache2 .
+
+docker image 
+
+docker ps 
+
+docker run --name http -p 8081:8081 -d apache2
+
+docke ps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+install ubuntu base image depoly the docker 
+
+docker ps 
+
+docker image 
+
+
+

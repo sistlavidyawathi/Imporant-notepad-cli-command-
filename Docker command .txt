@@ -1,0 +1,355 @@
+what is docker 
+Docker is an open source tool which is designed to create depoly or run application easliy on container
+
+docker allows application to share the same kernel on which they are running 
+
+docker is bit similar to virtual mahcine but it is not exactly a virtual machine 
+
+192.168.65.0/24
+
+
+mkdir DockerFiles
+cd DockerFiles
+touch Dockerfile
+
+vim Dockerfile
+
+# getting base image ubuntu
+FROM ubuntu
+
+MAINTAINER sistlm <sistladurgamahenderrao@gmail.com>
+
+RUN apt-get update
+
+CMD ["echo", "HELLO World...! from my frist docker image"]
+
+ESC
+
+:WQ!
+
+cat Dockerfile
+
+docker build /Users/raghav/Desktop/DockerFiles
+
+or 
+
+docker build -t myimage1:1.0 . 
+
+docker run imageid 
+
+docker run imageid 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker run --name jenkinsci -p 8080:8080 jenkins/jenkins:lts
+
+
+docker pull jenkins/jenkins:lts
+docker ps 
+
+docker network ls
+
+docker network create -d macvlan -subnet=10.10.1.0/24 --ip-range=10.10.1.3/24 ecommerce 
+
+docker network ls
+
+docker network inspect ecommerce 
+
+docker image 
+
+docker ps 
+
+docker pull nginx:stable
+
+docker image 
+
+docker container run -d --name apps -p 8084:80 nginx:stable
+ 
+docker ps 
+
+curl http://localhost:8084
+
+docker ps 
+
+cd /opt/docker/
+
+ll
+
+vi dockerfile 
+
+FROM UBUNTU 
+ARG DEBAIN_FORNTEN=noninteractive 
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN sed -i "s/80/8001/g" /etc/apache2/ports.conf
+EXPOSE 8001
+CMD ["/usr/sbin/apache2ctl","-D", "FOREGROUND", "-k", "start"]
+cat Dockerfile
+
+docker build -t apache2 .
+
+docker image 
+
+docker ps 
+
+docker run --name http -p 8081:8081 -d apache2
+
+docke ps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+install ubuntu base image depoly the docker 
+
+docker ps 
+
+docker image 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Docker file name 
+In my last post, I explained how to install Docker and how to run containers. Today, we will walk through creating a Docker container using a Dockerfile.
+
+AuthorRecent Posts
+
+Josh Rickard
+Josh's primary focus is in Windows security and PowerShell automation. He is a GIAC Certified Windows Security Administrator (GCWN) and GIAC Certified Forensic Analyst (GCFA). You can reach Josh at MSAdministrator.com or on Twitter at @MS_dministrator.
+A Dockerfile (no file extension) is a definition file that will build and run a container. That container can be a simple Microsoft IIS web application or Python/Flask application or a simple build/reporting service. A definition file helps us with our operational tasks, especially when we are building services or scripts for the repeatable tasks we face on a daily basis.
+
+
+Here is an example of a Dockerfile that will set up an IIS web server with ASP.NET 4.5 on a Windows system:
+
+FROM microsoft/iis
+RUN mkdir c:\myapp
+RUN powershell -NoProfile -Command \
+    Install-WindowsFeature NET-Framework-45-ASPNET; \
+    Install-WindowsFeature Web-Asp-Net45; \
+    Import-Module IISAdministration; \
+    New-IISSite -Name "MyApp" -PhysicalPath C:\myapp -BindingInformation "*:8000:"
+EXPOSE 8000
+ADD bin/ /myapp
+Wow, I bet you didn't think these few lines would set up an entire IIS web application with ASP.NET 4.5, did you? Well, they do! Let's break this down a bit further.
+
+As explained in my previous post, Docker images are prebuilt "prerequisites" we can install and use when creating and running our container. Within a Dockerfile we specify the base image we want to use by declaring FROM {image name}. In this case, we are using the Docker Hub image for an IIS server Microsoft has provided.
+
+
+FROM microsoft/iis
+The second statement you see uses the RUN command to tell the container, once it is running, to call mkdir c:\myapp. At this point, it creates a new directory inside our container itself called c:\myapp.
+
+At this point Docker has downloaded and built a containerized application based of the Microsoft/iis image with all the base prerequisites needed for setting up an IIS server. In addition we are telling the container also to create a new "virtual" folder inside the container itself. You don't really have access to this location, meaning you won't see it on your local file system. At this point, you just need to trust Docker is doing what you specified (and it is).
+
+Moving on, the next statement you see is another RUN command:
+
+RUN powershell -NoProfile -Command \
+    Install-WindowsFeature NET-Framework-45-ASPNET; \
+    Install-WindowsFeature Web-Asp-Net45; \
+    Import-Module IISAdministration; \
+    New-IISSite -Name "MyApp" -PhysicalPath C:\myapp -BindingInformation "*:8000:"
+This RUN command is a bit different but does essentially the same thing. This time we are now specifying that we should create a new PowerShell "shell" by calling:
+
+powershell -NoProfile -Command
+Next, we specify our standard PowerShell commands as normal. You may notice that each line has a "\" at the end of it. The backslash is to ensure line continuation within the Docker container.
+
+Install-WindowsFeature NET-Framework-45-ASPNET; \
+Install-WindowsFeature Web-Asp-NET45; \
+Import-Module IISAdministration; \
+New-IISSite -Name "MyApp" -PhysicalPath C:\myapp -BindingInformation "*:8000:"
+We then install the NET-Framework-45-ASPNET and Web-Asp-Net45 Windows features, just like we would do on a normal IIS web server. We then import the IISAdministration PowerShell module and create a new IIS website called MyApp. The New-IISSite cmdlet also allows us to specify a PhysicalPath and a specific port to bind to. In our case, we are binding all requests to port 8000.
+
+Next, we then run the EXPOSE networking option in our Dockerfile. This option is a bit confusing to some, but it allows the individual who is generating the Docker container to specify a network port the individual can use to interact with the container. EXPOSE does not actually expose the network port. To expose a port to the world (or our network), you would need to specify another option when you run your container. For example, you would do the following:
+
+docker run {image} -p 80
+This would actually expose the container to a network outside your local system.
+
+Within our folder that contains our Dockerfile, we should also have a folder named bin. Within this folder, we should have a basic HTML file called index.html with the following content:
+
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+      <TITLE>
+         Hello from my Docker for Windows Container!
+      </TITLE>
+   </HEAD>
+<BODY>
+   <H1>Hi</H1>
+   <P>This is very minimal "hello world" HTML document, but it's running within Docker for Windows</P>
+</BODY>
+</HTML>
+The last statement in our Dockerfile is the ADD command. This command will add files or scripts or whatever you have specified to the container.
+
+ADD bin/ /myapp
+How the ADD command works is that it takes the current directory holding your Dockerfile, and if you have specified a specific folder, like bin/, it would add this directory and all of its contents to /myapp within the Docker container. Here's a visual representation of this:
+
+Add files from local file system to your Docker container
+Add files from local file system to your Docker container
+
+Now that we have our Dockerfile and our bin/index.html in the same folder, we will now build and run our new container!
+
+To run our new container, open up your PowerShell console. Next, change directories to the folder container for your Dockerfile and bin/index.html folder. For me, I have these located at C:\Docker For Windows Example:
+
+[Open PowerShell Console]
+cd 'C:\Docker For Windows Example'
+docker build .
+Please note that the full command is docker build . The period at the end is needed, and it references the location of our Dockerfile.
+
+After we have pulled down our image from Docker Hub, we should now have a new IIS website set up and running our index.html page. You can view it by going to your browser and going to:
+
+http://127.0.0.1/index.html
+
+Besides the options I mentioned in our example, you have additional commands available that I believe you will find extremely useful. These additional commands are:
+
+ENTRYPOINT/CMD:     You may see this command as either ENTRYPOINT or CMD, but there are only minor differences between the two. An example of how to use CMD is as follows:
+
+General Example: CMD ["executable","param1","param2"]
+Python Example: CMD ["python", "/usr/src/app/setup.py"]
+PowerShell Example: CMD [powershell.exe, -executionpolicy, bypass, c:\startup.ps1]
+ENV: The ENV statement allows you to specify environmental variables within the container you are running. These can be great for a handful of variables, but this command does slow down your build process.
+
+WORKDIR: WORKDIR allows you to set the working directory within a container. This is great if you want to use relative paths within your container. We'd typically use this before we call our RUN, CMD, ENTRYPOINT, etc. commands in our Dockerfile
+
+You can find more information about all the commands available by visiting Docker's official documentation. Please view this documentation here.
+
+Now that we understand the basics on building containers, we should be familiar enough to start playing around with all the available images on Docker Hub and even starting to create our own.
+
+In the next segment of this series, we will go a bit further and talk about using docker-compose. This amazing feature will allow you to create multiple containers simultaneously. Why is this useful? Imagine creating an application that has both a front-end UI and a back-end database. In the meantime, please check out more information about Docker Compose here.
+
+
++4
+Want to write for 4sysops? We are looking for new authors.
+
+Read 4sysops without ads and for free by becoming a member!
+
+Articles in series
+Docker on Windows
+Install Docker and run containers on Windows
+Create a Docker container on Windows with a Dockerfile
+RELATED ARTICLES
+Installing the Community Networking Driver for ESXi from the command line+
+Install ESXi network drivers for Intel e1000 and Intel I220 / I221 / I225/ I226 chipsets
+Many IT professionals and others run VMware lab environments for learning, certification prep, evaluation, and other use cases. They...
+
+New custom properties+
+Create and read SCVMM custom properties with PowerShell and the VMM Console
+In this guide, I will show you how to add, remove, and read Microsoft's System Center Virtual Machine Manager...
+
+Docker Desktop Use WSL2 based engine+
+Export and import any Linux distribution in Windows Subsystem for Linux (WSL)
+In my last post, I described how to install and manage Windows Subsystem for Linux (WSL) in Windows 11....
+
+After running install.sh you have to restart Ubuntu in the VM+
+Activate enhanced session mode for Ubuntu VMs in Hyper-V
+Enhanced session mode increases the integration of a guest OS with the host, thereby greatly improving the user experience....
+
+Using the Native Key Provider in VMware ESXi 1+
+Install Windows 11 in a VM on VMware Workstation or ESXi
+With the release of Windows 11, many are starting to test the OS on virtual machines. VMware Workstation and...
+
+Running the usbipd command line utility+
+Usbipd-win: Access and share USB devices in Hyper-V VMs and WSL
+Usbipd-win is an open-source project that allows sharing locally connected USB devices with other machines, including Hyper-V guests and...
+
+vSAN ReadyNode Sizer+
+How to use VMware vSAN ReadyNode Configurator
+VMware vSAN is a hyperconverged solution that creates a shared datastore from locally attached disks within each server of...
+
+VMware Tanzu+
+VMware Tanzu Kubernetes Toolkit version 1.3 new features
+VMware released a new version of the Tanzu Kubernetes Toolkit. In this post, I will discuss the new features...
+
+The Hysolate Sensitive Access Workspace+
+Hysolate Free for Sensitive Access: Run sensitive activities in an isolated workspace
+An overview of Hysolate Free for Sensitive Access, which provides a secure environment for accessing sensitive data and services.
+
+WorkSpace Desktop+
+Install Amazon WorkSpaces: Virtual Linux or Windows desktop in AWS
+Amazon WorkSpaces provides hosted virtual desktops in the AWS cloud that enable users to be more productive by combining...
+
+Start your replica of VCSA directly from the ESXi host+
+Disaster recovery strategies for vCenter Server appliance VM
+In this post, we'll list some of the most common disaster recovery strategies for small environments for VMware vCenter...
+
+Process the VHDX files in all the subfolders by using the switch IncludeSubfolders+
+Compress-Vhdx: Compress multiple VHDX files using the PowerShell cmdlet Optimize-VHD
+My PowerShell function Compress-Vhdx allows you to compress multiple VHDX files with a single command to reclaim space from...
+
+KubeCTL configuration on Windows+
+Install the free new VMware Tanzu Community Edition
+VMware has released a new version of Tanzu called Tanzu Community Edition. This version is a free download that...
+
+Remediate your host as usual with vSphere Lifecycle Manager+
+How to migrate VCSA to a new host without VMotion
+This is a post for VMware admins who manage a small environment based on vSphere Essentials that does not...
+
+Managing snapshots+
+Snapshot management in vSphere
+As many who use vCenter to host their virtual servers know, snapshots are a critical function, one that is...
+
+New free VMware tool: Virtual Machine Desired State Configuration (VMDSC)+
+New free VMware tool: Virtual Machine Desired State Configuration (VMDSC)
+The new free VMware tool, Virtual Machine Desired State Configuration (VMDSC), allows you to optimize the performance of your...
+
+Select Automatic Rebalance for automate rebalancing operations+
+VMware vSAN Automatic Rebalance vs. Proactive Rebalance
+VMware vSAN's Automatic Rebalance capacity is part of vSphere 7 U2. What is the difference between vSAN Automatic Rebalance...
+
+VMware Wavefront dashboards+
+VMware Tanzu Services overview
+The VMware Tanzu portfolio offers several services that allow the enterprise to manage the container ecosystem under VMware vSphere...
+
+VMware NSX UI in the vSphere client+
+New features in VMware vSphere 7 Update 3
+VMware recently announced the latest version of vSphere 7 Update 3. This version is an evolution of a rather...
+
+vCenter instances in the vSphere Alert Center+
+vSphere Alert Center: Get alerts from multiple vCenter Servers with a free tool
+The free utility vSphere Alert Center from VMware allows you to set up alerts from multiple vCenter Servers directly...
+
+Install Docker and run containers on WindowsAutomate out-of-office messages in Outlook with Visual Basic for Applications (VBA)
+1 COMMENT
+
+Danish Zahid
+4 years ago
+Hey, great tutorial.
+
+Can you please provide some guidance on how to tweak the Dockerfile in order to run a shiny app.
+
+Thank you.

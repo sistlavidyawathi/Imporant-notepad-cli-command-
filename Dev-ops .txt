@@ -1,0 +1,187 @@
+what is dev-ops ?
+Dev-ops is a set of tools and practices designed to shorten the software development lifecycle process and soft and efficency manner  .
+
+How to move ahead in the competitive market ?
+How to provide best feture to the end -users in set time?
+
+1 Faster deployment 2 stablized work environment 3 Imporved product quality 4 automation 5 Agility  6 continous delivery
+
+
+
+Dev-ops Skills 
+
+Fundmental linux command --- 
+
+git and git hub ---   git is version control system / git hub web base repository host the service  web interface to upolad the file  / git is software for coordinating work among the progarmmers collabortively developing source code 
+
+CI-CD WITH JENKINS  --- jenkins is an open-source automation server that helps automate and support continours integarion and continouse delivery (CI -CD )
+
+SELENIUM  ---- SELENIUM is a protable framework for conducting automation testing 
+
+ANSIBLE  ---- configuration mangement using anisble 
+
+01 configuration mangment  2 cloud pro0vising 3 application depolyment 4 intra- service orchestration 
+
+DOCKER --- containeriztion method that allow developers to create the depoly files more quickly and secuely 
+
+01 Docker is a paltform as a service prodoct that delivery software in containders using  OS-Level virtualiztion 
+ 
+
+NAGIOS ---  evkyate the most suitable tools for ciontinouse monitoring   like risk complinace security issues  
+
+NAGIOS is an open source continous monitoring tool used to maontioru the system network and IT Ingrastrucutre 
+
+
+AKS --- Grasp the fact theat container orchestriotn makes devlopment and opertions more mangeable 
+
+aks is a powerful open -source orchestration paltform designed to manage containerized applications
+
+
+
+
+Linux basic command  and introuction of linx 
+
+Linux is an operating system that manges the communtion between and hardware of system 
+and is introuce by the linux tarvalds 
+
+compunents of linux OS : BOTTLOADER --A SOFTWARE TO MANGE THE BOOTING PROCESS OF A COMPUTER THAT MOSTLY 
+                         COMES AS A SPLASH SCREEN TO BOOT INTO AN OS 
+
+kERNEL : THE CORE OF SYSTEM THAT MANGES CPU MEMORY AND PERPHERAL DEVICES AND IS THE BASIC LEVEL OF AN OS 
+
+INIT SYSTEM : A SUBSYTEM THAT BOOT STRAPS THE USER SPACE AND CHARGES WITH CONTROLLING DAEMONS 
+
+DAEMONS : BACKGROUND SERVES SUCH AS PRINTING SOUND AND SCHEDULING LOG INFOMRATION WATCHING THE INFORMATION MOVE AND MANGING OF LOG 
+
+GRAPHICAL SERVER : A SUBSYSTEM TO DISPLAY GRAPHICS ON THE MONITOR COMMONLY REFERED AS AN X SERVER OR X 
+
+DESKTOP ENVIORMNET : THE CONPOINET WITH WHICH USER INTERACT THE  MOST AND INCLUDES BUILD IN APPLICATION 
+
+APPLICATION : HIGH QUALITY SOFTWARE APPLICATION CAN BE EASILY FOUND USING APP STORE LIKE TOOLS THAT SIMPLIFY APPLICATION INSTALLASTION 
+
+
+LINUX DISTRUBTER : UBUNTU  DEBAIN CENTOUS FEDORE LINUX MINT  OPENSUSE ARCHLINUX ELEMENTARY OS  
+
+
+
+IMPORTANT OF LINXU IN DEVOPS 
+
+FASTER DEVELOPMENT ON LINUX 
+OPEN SOURCE 
+FLEXIBLE 
+SCALABLE 
+
+LINUX ADMINTRATION  
+
+01 FILE BACKUPS AND RESTORATIONS 
+02 DISASTER RECOVERY 
+03 NEW SYSTEM BUILDS 
+04 HARDWARE SOFTWARE AND USER MAINTENACNE 
+05 FILE SYTEM HOUSEKEEPING 
+06 APPLICATION INSTALTION AND CONFIGURATION 
+
+
+
+what is dev-ops 
+It is a set of parcites that aims to provide superior quality software quickly by integaring the processs between the development and the operations teams 
+
+it is interation process between the devopment and openation  so their build test and depoly and realse the software in more efficency manner and faster mannner 
+
+what is devops aims 
+Shortens development life cycle  
+provides fetures and fixes 
+provides reqular updates 
+
+Dev : plan create  verify  package    PLAN  CREATE TEST DEPOLY    
+OPS : RELASE CONFIGURE  MONITOR       
+
+
+
+
+SOFTWARE DEVELOPMENT    HAVE 2 METHODS     
+
+WATERFALL MODEL 
+
+Requirements ananlysis  
+                      
+					  system design 
+					               
+								   implementation 
+								    
+									              testing like unit test integariontest and performance testing 
+												  
+												  
+												  depolyment server   
+												  
+												                     Maintenance face  will monitoring reslove it concern 
+																	 
+																	 
+												  
+												    
+
+
+
+
+
+AGILE MODEL   focuses on proce4ss adaptablity and cutomer statifcation by rapid delivery of working software product 
+ 
+ agile work on the product backlog 
+                                  
+								  spring planning 
+								  
+								                 spring backlog 
+												 
+												               1 scrum team  daily work -------sprint review  ------- increment    
+															   
+															                       4 weeks 
+																				   
+																				     
+
+
+
+
+
+
+
+Dev-ops lifecycle  
+
+continous development :   developer build the code and plan the code dev-ops need not required planing  serveral tools for code mainting 
+
+continous testing     :   It is use of bug automation test TestNG : TestNG GENERATES REPORTS     JUNIT          SELENIUM: SELENIUM IMPLEMENTS THE AUTOMATION TESTING    
+
+continous intergation  : UNIT TESTING  INTEGRATION TESTING  CODE REVIEW   CODE PACKAGING 
+
+continous depolyment   : CHEF PUPPET   ANSIBLE    SLATSTACK    ALL THE ABOVE IS DOCKER STAGING ENVIRONMENT  CODE TESTING  PRODCUTION ENVIORMNET  CODE DEVELOPMENT    
+
+continou monitoring		: NAGIOS SENSU    DATADOG    CLOUDWATCH  GRAFANE 	
+
+
+
+
+SOURCE CODE MANAGEMENT : GIT AND GIT HUB 
+
+SOFTWARE BUILD AUTOMATION TOOL : GRADLE MAVEN HASICORP PACKER  APACHE ANT  GULLP 
+
+TESTING :  SELENIUM     JUNIT      APPIUM    
+
+INTEGRATION TOOLS : JENKINS     BAMBOO 
+
+CMT AND DEPLOYMENT : CODESHIP AWSCODEDEPLOY  TERRAFORM     ANSIBLE  CHEF  PUPPET 
+
+MONITORING : NAGIOS  AND SPLUNK 
+
+CONTAINERIZTION : DOCKER AND AKS 	
+
+
+
+																	 
+												 
+
+
+
+
+
+
+
+
+

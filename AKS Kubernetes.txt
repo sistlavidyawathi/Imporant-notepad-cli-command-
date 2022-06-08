@@ -1,0 +1,16 @@
+kubectl get nodes
+docker container ls
+docker info
+kubectl apply -f https://raw.githubusercontent.com/docker/docker-birthday/master/resources/kubernetes-docker-desktop/vote.yaml
+kubectl -n vote get pods
+
+
+
+
+Check the resilience
+
+docker container ls -f name='k8s_result*' --format '{{.ID}}'
+
+docker container rm -f $(docker container ls -f name='k8s_result*' --format '{{.ID}}')
+
+docker container ls -f name='k8s_result*' --format '{{.ID}}'

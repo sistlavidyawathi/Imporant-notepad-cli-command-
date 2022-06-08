@@ -1,0 +1,34 @@
+ docker --version
+ docker-compose --version
+ docker-machine --version
+ docker run -p 8080:8080 -p 50000:50000 --restart always jenkins/jenkins:lts-jdk11
+ 
+ 
+ c3bbcf523919481bad3fed331304faf6
+ 
+ 
+ 
+https://www.jorgebernhardt.com/
+ 
+ 
+ 
+ 
+ powershell comand to install dokcer 
+ 
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+
+Install-Package -Name docker -ProviderName DockerMsftProvider
+
+Restart-Computer -Force
+
+Get-WindowsFeature -name containers 
+
+docker version
+
+docker info 
+
+##### Host version: Windows Server 2016
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver-sac2016
+ 
+##### Host version: Windows Server 2019
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver-1809

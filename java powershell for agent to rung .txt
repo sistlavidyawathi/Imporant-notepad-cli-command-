@@ -1,0 +1,8 @@
+jenkins.war java-jar C:\Program Files\Jenkins.war
+
+
+
+
+javaws .\slave-agent.jnlp -o
+
+get-service jenkinsslave-c_jenkins
